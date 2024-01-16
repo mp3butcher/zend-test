@@ -41,7 +41,7 @@
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Test_PHPUnit_Db_Connection extends PHPUnit_Extensions_Database_DB_DefaultDatabaseConnection
+class Zend_Test_PHPUnit_Db_Connection extends \PHPUnit\DbUnit\Database\DefaultConnection
 {
     /**
      * Zend_Db_Adapter_Abstract
@@ -60,7 +60,7 @@ class Zend_Test_PHPUnit_Db_Connection extends PHPUnit_Extensions_Database_DB_Def
     /**
      * Metadata
      *
-     * @param PHPUnit_Extensions_Database_DB_IMetaData $db
+     * @param PHPUnit\DbUnit\Database\Metadata\IMetadat $db
      */
     protected $_metaData;
 
@@ -81,7 +81,7 @@ class Zend_Test_PHPUnit_Db_Connection extends PHPUnit_Extensions_Database_DB_Def
      *
      * @return void
      */
-    public function close()
+    public function close(): void
     {
         $this->_connection->closeConnection();
     }
@@ -91,7 +91,7 @@ class Zend_Test_PHPUnit_Db_Connection extends PHPUnit_Extensions_Database_DB_Def
      *
      * @param string $resultName
      * @param string $sql
-     * @return PHPUnit_Extensions_Database_DataSet_ITable
+     * @return PHPUnit\DbUnit\DataSet\ITable
      */
     public function createQueryTable($resultName, $sql)
     {
@@ -112,7 +112,7 @@ class Zend_Test_PHPUnit_Db_Connection extends PHPUnit_Extensions_Database_DB_Def
      * Returns a database metadata object that can be used to retrieve table
      * meta data from the database.
      *
-     * @return PHPUnit_Extensions_Database_DB_IMetaData
+     * @return PHPUnit\DbUnit\Database\Metadata\IMetadat
      */
     public function getMetaData()
     {

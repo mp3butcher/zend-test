@@ -67,6 +67,6 @@ class Zend_Test_PHPUnit_Db_DataSet_DbRowset extends PHPUnit_Extensions_Database_
             $columns = $rowset->getTable()->info('cols');
         }
 
-        $this->tableMetaData = new PHPUnit_Extensions_Database_DataSet_DefaultTableMetaData($tableName, $columns);
+        $this->tableMetaData = new PHPUnit\DbUnit\DataSet\DefaultTableMetadata($tableName, $columns);
     }
 }
